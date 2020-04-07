@@ -1,4 +1,5 @@
 from random import randint
+import time
 
 randomNum = randint(1,9)
 print(randomNum)
@@ -30,5 +31,10 @@ while True:
             print("Invalid input. Please enter a correct value.")
             continue
         elif userGuess == 'exit':
-            print("Exiting game")
+            print("You chose to exit the game. Leaving game in \n...")
+            for x in range(3,0,-1):
+                time.sleep(1)
+                print("...{}".format(x))
+            time.sleep(1)
+            print("You have left the game.")
             break
