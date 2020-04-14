@@ -9,6 +9,8 @@ prompt1 = "What is your guess?:"
 prompt2 = "Guess again:"
 print("This is a number guessing game. Pick a number between 1-10. Enter 'exit' to leave game.")
 
+err = "Negative Number. Invalid input."
+
 while True:
     userGuess = input(prompt1)
     try:
@@ -26,9 +28,9 @@ while True:
             print("That's correct")
             print("{} attempts until you got it right!".format(attempts))
             break
-    except ValueError:
+    except ValueError as err:
         if userGuess =='':
-            print("Invalid input. Please enter a correct value.")
+            print(err)
             continue
         elif userGuess == 'exit':
             print("You chose to exit the game. Leaving game in \n...")
