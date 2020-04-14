@@ -14,3 +14,6 @@ soup = BeautifulSoup(r_html,'html.parser')
 
 for link in soup.find_all('a'):
     print(link.get('href'))
+
+def test():
+    print("Hello world")
