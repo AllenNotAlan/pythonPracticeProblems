@@ -5,8 +5,6 @@
 #Hint:The Fibonnaci seqence is a sequence of numbers where the next number in the sequence is the sum of the previous two numbers in the sequence. 
 #The sequence looks like this: 1, 1, 2, 3, 5, 8, 13, …
 
-userInput = int(input("How many fibonnaci numbers to generate:"))
-
 def fib(num):
     x = 0
     y = 1
@@ -21,5 +19,16 @@ def fib(num):
         i = i + 1
         print(x)
 
+#Iterative version, elegant and simple solution
+def fibonnaci(n, first: int = 0, second: int = 1):
+    for elem in range(n):
+        print(first)
+        first, second = second, first + second
 
-fib(userInput)
+if __name__ == "__main__":
+
+    fibonnaci(10)
+    # userInput = int(input("How many fibonnaci numbers to generate:"))
+    # fib(userInput)
+
+
