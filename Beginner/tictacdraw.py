@@ -29,7 +29,7 @@ def inputCoor1(grid):
         grid[x][y] = "X"
         global elapsed_turns
         elapsed_turns = elapsed_turns + 1
-    printGrid(grid)
+    # printGrid(grid)
 
 def inputCoor2(grid):
     x, y = input("Player 2 enter two numbers: ").split()
@@ -41,7 +41,7 @@ def inputCoor2(grid):
         grid[x][y] = "O"
         global elapsed_turns
         elapsed_turns = elapsed_turns + 1
-    printGrid(grid)
+    # printGrid(grid)
 
 def printGrid(grid):
     for i in range(len(grid)):
@@ -80,25 +80,20 @@ def checkDraw(grid):
 
 while True:
     
-    print(elapsed_turns)
     inputCoor1(grid)
     checkGrid(grid)
-
+    printGrid(grid)
     if elapsed_turns !=9:
-
         if checkGrid(grid) != 0:
             print(checkGrid(grid), "wins")
             break
         else:
             inputCoor2(grid)
             checkGrid(grid)
+            printGrid(grid)
             if checkGrid(grid) != 0:
                 print(checkGrid(grid), "wins")
                 break
     else:
         print("Draw")
         break
-
-    
-    # checkDraw(grid)
-    # break
