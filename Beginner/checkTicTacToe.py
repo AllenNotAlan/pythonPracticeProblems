@@ -1,8 +1,8 @@
 import numpy
 
-mylist = [[1,2,0],
-          [2,2,0], 
-          [2,1,0]]
+mylist = [[1,2,1],
+          [2,2,1], 
+          [2,1,2]]
 
 def checkGrid(grid):
     for i in range(len(grid)):

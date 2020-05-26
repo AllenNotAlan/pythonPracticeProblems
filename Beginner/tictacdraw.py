@@ -17,6 +17,8 @@ grid = [[0,0,0],
 #         ['X','O','O'],
 #         ['O','X','X']]
 
+elapsed_turns = 0
+
 def inputCoor1(grid):
     x, y = input("Player 1 enter two numbers: ").split()
     x, y = [int(x), int(y)]
@@ -25,7 +27,8 @@ def inputCoor1(grid):
         inputCoor1(grid)
     else:
         grid[x][y] = "X"
-    checkGrid(grid)
+        global elapsed_turns
+        elapsed_turns = elapsed_turns + 1
     printGrid(grid)
 
 def inputCoor2(grid):
@@ -36,7 +39,8 @@ def inputCoor2(grid):
         inputCoor2(grid)
     else:
         grid[x][y] = "O"
-    checkGrid(grid)
+        global elapsed_turns
+        elapsed_turns = elapsed_turns + 1
     printGrid(grid)
 
 def printGrid(grid):
@@ -44,15 +48,16 @@ def printGrid(grid):
         print(grid[i])
 
 def checkGrid(grid):
-
     for i in range(len(grid)):
         row = set([grid[i][0], grid[i][1], grid[i][2]])
         if len(row) == 1 and grid[i][0] != 0:
+            fRow = row
             return grid[i][0]
 
     for i in range(len(grid)):
         col = set([grid[0][i], grid[1][i], grid[2][i]])
         if len(col) == 1 and grid[0][i] != 0:
+            fCol = col
             return grid[0][i]
 
     diag1 = set([grid[0][0], grid[1][1], grid[2][2]])
@@ -60,7 +65,6 @@ def checkGrid(grid):
 
     if len(diag1) == 1 or len(diag2) == 1 and grid[1][1] != 0:
         return grid[1][1]
-
 
     return 0
 
@@ -71,21 +75,30 @@ def checkDraw(grid):
         for y in range(len(grid)):
             if grid[i][y] == 0:
                 Z = Z - 1
-    
     return Z
 
 
 while True:
-
+    
+    print(elapsed_turns)
     inputCoor1(grid)
-    if checkGrid(grid) != 0:
-        print(checkGrid(grid), "wins")
-        break
-    else:
-        inputCoor2(grid)
+    checkGrid(grid)
+
+    if elapsed_turns !=9:
+
         if checkGrid(grid) != 0:
             print(checkGrid(grid), "wins")
             break
+        else:
+            inputCoor2(grid)
+            checkGrid(grid)
+            if checkGrid(grid) != 0:
+                print(checkGrid(grid), "wins")
+                break
+    else:
+        print("Draw")
+        break
 
+    
     # checkDraw(grid)
     # break
