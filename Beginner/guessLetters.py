@@ -29,6 +29,32 @@ def checkLetterInWordArray(userInput, wordArray):
         global score
         score = score - 1
 
+def checkScore():
+    if score == 5:
+        print(" |")
+        print(" O")
+    elif score == 4:
+        print(" |")
+        print(" O")
+        print(" |")
+    elif score == 3:
+        print(" |")
+        print(" O")
+        print("-|")
+    elif score == 2:
+        print(" |")
+        print(" O")
+        print("-|-")
+    elif score == 1:
+        print(" |")
+        print(" O")
+        print("-|-")
+        print("/")
+    elif score == 0:
+        print(" |")
+        print(" O")
+        print("-|-")
+        print("/ \\")
 
 def printInfo(displayWordArray, lettersUsedSet):
     print(displayWordArray,"\n")
@@ -49,7 +75,8 @@ def main():
         checkLetterUsed(userGuess, usedLetters)
         usedLetters.add(userGuess)
         checkLetterInWordArray(userGuess, wordArray)
-        print(score)
+        # print(score)
+        checkScore()
 
         if score < 1:
             print("Game over")
