@@ -38,7 +38,9 @@ def printGrid(grid):
         print(grid[i])
 
 #main function
+#checkGrid comes from checktictactoe.py file
 def main():
+    printGrid(grid)
     while True:
         inputCoor1(grid)
         checkGrid(grid)

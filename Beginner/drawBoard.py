@@ -6,7 +6,7 @@ def dot_printBoard():
     print(' ---' * sizeOfBoard)
 
 def slash_printBoard():
-    print('|   ' * (sizeOfBoard + 1))
+    print('|  ' * (sizeOfBoard + 1))
 
 
 def main():
