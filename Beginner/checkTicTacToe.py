@@ -22,7 +22,7 @@ def checkGrid(grid):
     return 0
 
 
-print(checkGrid(mylist))
+# print(checkGrid(mylist))
 
 #notes
 # set() creates a set of numbers (duh). UNIQUE numbers. ie, if list = [1,1,2] then set(list) = {1,2} or if list =[1,1,1] then set(list) = {1}
