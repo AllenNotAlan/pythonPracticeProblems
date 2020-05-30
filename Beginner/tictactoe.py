@@ -18,7 +18,7 @@ def inputCoor1(grid):
     else:
         grid[x][y] = "X"
         global elapsed_turns
-        elapsed_turns = elapsed_turns + 1
+        elapsed_turns += 1
 
 #input function for player O
 def inputCoor2(grid):
@@ -30,7 +30,7 @@ def inputCoor2(grid):
     else:
         grid[x][y] = "O"
         global elapsed_turns
-        elapsed_turns = elapsed_turns + 1
+        elapsed_turns += 1
 
 #print grid function
 def printGrid(grid):
