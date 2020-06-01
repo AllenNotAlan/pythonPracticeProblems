@@ -4,12 +4,12 @@ def main():
     print("Bianca, Allen and Tina")
 
     birthdayDict = {
-        "Bianca": "13/08",
-        "Tina": "22/01",
-        "Allen": "27/04",
+        "bianca": "13/08",
+        "tina": "22/01",
+        "allen": "27/04",
     }
 
-    userInput = str(input("Enter the name of the person you want to know the birthday of:"))
+    userInput = str(input("Enter the name of the person you want to know the birthday of:")).lower()
 
     if userInput in birthdayDict:
         print("%s's birthday is %s" % (userInput, birthdayDict[userInput]))
