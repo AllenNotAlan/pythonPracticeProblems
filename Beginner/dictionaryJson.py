@@ -11,7 +11,7 @@ def menu():
         print("hello")
         getBirthday()
     elif userInput == 2:
-        newName = str(input("Enter name:"))
+        newName = str(input("Enter name:")).lower()
         newBirthday = str(input("Enter birthay (dd/mm):"))
         writeToJson(newName, newBirthday)
 
@@ -32,7 +32,7 @@ def writeToJson(name, birthday):
     newData = {
         name: birthday
     }
-
+    
     with open("birthdays.json", "r+") as f:
         dataFile = json.load(f)
         dataFile.update(newData)
